@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кафе «Тёплый угол» - уютное место в центре города</title>
+<meta name="description" content="Кафе «Тёплый угол» - домашняя кухня, свежие продукты, уютная атмосфера. Бронирование столика онлайн.">
+
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="#hero" class="logo">
+      <img src="img/logo.png" alt="Тёплый угол" class="logo-mark">
+      Тёплый угол
+    </a>
+    <nav class="nav">
+      <a href="#menu">Меню</a>
+      <a href="#promo">Акции</a>
+      <a href="#booking">Бронь</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="tel:+76767676767" class="header-phone">+7 676 767 67-67</a>
+    <button class="burger" id="burger" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#menu">Меню</a>
+  <a href="#promo">Акции</a>
+  <a href="#booking">Забронировать</a>
+  <a href="#contacts">Контакты</a>
+  <a href="tel:+76767676767">+7 676 767 67-67</a>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Кафе и кофейня в центре</p>
+      <h1>Уютное место для завтраков и встреч</h1>
+      <p>Домашняя кухня, свежие продукты и атмосфера, в которую хочется возвращаться.</p>
+
+      <div class="hero-hours">
+        <span class="hero-hours-label">Работаем ежедневно</span>
+        <span class="hero-hours-time">9:00 – 23:00</span>
+      </div>
+
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-open-modal>Забронировать стол</button>
+        <a href="#menu" class="btn btn-ghost">Смотреть меню</a>
+      </div>
+    </div>
+    <div class="hero-img" aria-label="Фото интерьера кафе"></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <p class="eyebrow">Почему выбирают нас</p>
+    <h2 class="section-title">Четыре причины зайти</h2>
+    <div class="features" style="margin-top:32px">
+      <div class="feature"><h3>Домашняя кухня</h3><p>Готовим с утра по проверенным рецептам, без полуфабрикатов.</p></div>
+      <div class="feature"><h3>Свежие продукты</h3><p>Поставки от местных фермеров три раза в неделю.</p></div>
+      <div class="feature"><h3>Уютная атмосфера</h3><p>Мягкий свет, живая музыка по выходным, веранда летом.</p></div>
+      <div class="feature"><h3>Wi-Fi и розетки</h3><p>Можно поработать: быстрый интернет и розетка у каждого стола.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="menu" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Меню</p>
+        <h2 class="section-title">Наши блюда</h2>
+        <p class="section-sub" style="margin-bottom:0">Выберите категорию - покажем только то, что вам интересно.</p>
+      </div>
+      <a href="#booking" class="btn btn-ghost">Забронировать стол</a>
+    </div>
+
+    <div class="filters" id="menuFilters" role="tablist" aria-label="Категории меню">
+      <button class="filter active" data-filter="all" role="tab" aria-selected="true">Все <span class="filter-count" data-count="all"></span></button>
+      <button class="filter" data-filter="breakfast" role="tab" aria-selected="false">Завтраки <span class="filter-count" data-count="breakfast"></span></button>
+      <button class="filter" data-filter="main" role="tab" aria-selected="false">Основные <span class="filter-count" data-count="main"></span></button>
+      <button class="filter" data-filter="dessert" role="tab" aria-selected="false">Десерты <span class="filter-count" data-count="dessert"></span></button>
+      <button class="filter" data-filter="drinks" role="tab" aria-selected="false">Напитки <span class="filter-count" data-count="drinks"></span></button>
+    </div>
+
+    <div class="dishes" id="dishesGrid">
+      <!-- ЗАВТРАКИ -->
+      <article class="dish" data-category="breakfast"><div class="dish-img"></div><div class="dish-body"><h3>Сырники со сметаной</h3><p>Творожные, со свежей сметаной и домашним вареньем.</p><div class="dish-price">250 ₽</div></div></article>
+      <article class="dish" data-category="breakfast"><div class="dish-img"></div><div class="dish-body"><h3>Омлет с овощами</h3><p>Три яйца, помидоры, шпинат, сыр и зелёный лук.</p><div class="dish-price">280 ₽</div></div></article>
+      <article class="dish" data-category="breakfast"><div class="dish-img"></div><div class="dish-body"><h3>Круассан с лососем</h3><p>Свежий круассан, сливочный сыр, слабосолёный лосось.</p><div class="dish-price">340 ₽</div></div></article>
+      <article class="dish" data-category="breakfast"><div class="dish-img"></div><div class="dish-body"><h3>Блинчики с творогом</h3><p>Тонкие блинчики, творог, сметана, ягодный соус.</p><div class="dish-price">290 ₽</div></div></article>
+      <article class="dish" data-category="breakfast"><div class="dish-img"></div><div class="dish-body"><h3>Авокадо-тост</h3><p>Хлеб на закваске, авокадо, яйцо пашот, семена чиа.</p><div class="dish-price">320 ₽</div></div></article>
+
+      <!-- ОСНОВНЫЕ -->
+      <article class="dish" data-category="main"><div class="dish-img"></div><div class="dish-body"><h3>Паста карбонара</h3><p>Спагетти, гуанчале, желток, пармезан и чёрный перец.</p><div class="dish-price">390 ₽</div></div></article>
+      <article class="dish" data-category="main"><div class="dish-img"></div><div class="dish-body"><h3>Том-ям с креветками</h3><p>Кокосовое молоко, лемонграсс, креветки и грибы.</p><div class="dish-price">480 ₽</div></div></article>
+      <article class="dish" data-category="main"><div class="dish-img"></div><div class="dish-body"><h3>Стейк из говядины</h3><p>Мраморная говядина, розмарин, овощи-гриль.</p><div class="dish-price">690 ₽</div></div></article>
+      <article class="dish" data-category="main"><div class="dish-img"></div><div class="dish-body"><h3>Бургер с говядиной</h3><p>Котлета, чеддер, бекон, томаты, соус барбекю.</p><div class="dish-price">540 ₽</div></div></article>
+      <article class="dish" data-category="main"><div class="dish-img"></div><div class="dish-body"><h3>Ризотто с грибами</h3><p>Арборио, шампиньоны, пармезан, трюфельное масло.</p><div class="dish-price">460 ₽</div></div></article>
+
+      <!-- ДЕСЕРТЫ -->
+      <article class="dish" data-category="dessert"><div class="dish-img"></div><div class="dish-body"><h3>Чизкейк Нью-Йорк</h3><p>Классический, на песочной основе, с ягодным соусом.</p><div class="dish-price">220 ₽</div></div></article>
+      <article class="dish" data-category="dessert"><div class="dish-img"></div><div class="dish-body"><h3>Крем-брюле</h3><p>Нежный заварной крем с хрустящей карамельной корочкой.</p><div class="dish-price">190 ₽</div></div></article>
+      <article class="dish" data-category="dessert"><div class="dish-img"></div><div class="dish-body"><h3>Брауни с мороженым</h3><p>Тёплый шоколадный брауни и шарик ванильного мороженого.</p><div class="dish-price">260 ₽</div></div></article>
+      <article class="dish" data-category="dessert"><div class="dish-img"></div><div class="dish-body"><h3>Тирамису</h3><p>Маскарпоне, савоярди, эспрессо, какао.</p><div class="dish-price">280 ₽</div></div></article>
+
+      <!-- НАПИТКИ -->
+      <article class="dish" data-category="drinks"><div class="dish-img"></div><div class="dish-body"><h3>Капучино</h3><p>Двойной эспрессо и вспененное молоко. 300 мл.</p><div class="dish-price">180 ₽</div></div></article>
+      <article class="dish" data-category="drinks"><div class="dish-img"></div><div class="dish-body"><h3>Матча-латте</h3><p>Японский зелёный чай матча и миндальное молоко.</p><div class="dish-price">220 ₽</div></div></article>
+      <article class="dish" data-category="drinks"><div class="dish-img"></div><div class="dish-body"><h3>Лимонад домашний</h3><p>Свежий лимон, мята, сироп на выбор. 400 мл.</p><div class="dish-price">160 ₽</div></div></article>
+      <article class="dish" data-category="drinks"><div class="dish-img"></div><div class="dish-body"><h3>Эспрессо</h3><p>Классический итальянский, 30 мл.</p><div class="dish-price">120 ₽</div></div></article>
+      <article class="dish" data-category="drinks"><div class="dish-img"></div><div class="dish-body"><h3>Апельсиновый фреш</h3><p>Свежевыжатый сок из апельсинов. 300 мл.</p><div class="dish-price">280 ₽</div></div></article>
+    </div>
+
+    <div class="menu-more" id="menuMoreWrap" hidden>
+      <button class="btn btn-ghost" id="menuMoreBtn" type="button">
+        <span id="menuMoreText">Ещё</span>
+        <span id="menuMoreCount"></span>
+      </button>
+    </div>
+
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-icon"></div>
+      <p>В этой категории пока нет блюд.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="promo">
+  <div class="container">
+    <p class="eyebrow">Акции</p>
+    <h2 class="section-title">Специальные предложения</h2>
+    <p class="section-sub">Действуют в будни и выходные. Уточняйте у официанта.</p>
+
+    <div class="promos">
+      <article class="promo">
+        <div class="promo-badge">-20%</div>
+        <h3>Счастливые часы</h3>
+        <p>Скидка 20% на все напитки в будни днём. Идеально для короткой встречи или работы за чашкой кофе.</p>
+        <div class="promo-time">Пн–Пт · 15:00 - 17:00</div>
+      </article>
+      <article class="promo">
+        <div class="promo-badge">390 ₽</div>
+        <h3>Завтрак + кофе</h3>
+        <p>Любой завтрак из меню и капучино 250 мл по специальной цене. Начните день вкусно и недорого.</p>
+        <div class="promo-time">Ежедневно · 9:00 – 12:00</div>
+      </article>
+      <article class="promo">
+        <div class="promo-badge">Подарок</div>
+        <h3>День рождения</h3>
+        <p>Десерт в подарок при бронировании столика на 4+ гостей. По предъявлению документа, подтверждающего дату рождения.</p>
+        <div class="promo-time">По предварительной брони</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ОТЗЫВЫ (ЯНДЕКС) ================= -->
+<section class="section" id="reviews" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="container">
+    <p class="eyebrow">Отзывы гостей</p>
+    <h2 class="section-title">Что о нас говорят</h2>
+    <p class="section-sub">Реальные отзывы с Яндекс.Карт</p>
+
+    <div class="reviews-widget-container">
+      <!-- Обертка из Яндекс.Карт -->
+      <div style="width:100%;max-width:560px;height:800px;overflow:hidden;position:relative;margin:0 auto;">
+        <iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/213825798619?comments"></iframe>
+        <a href="https://yandex.ru/maps/org/teplo/213825798619/" target="_blank" style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box">Тепло на карте Салехарда - Яндекс Карты</a>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;text-align:center;">
+      <button class="btn btn-primary" data-open-modal>Забронировать стол</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="booking">
+  <div class="container">
+    <div class="booking">
+      <p class="eyebrow">Бронирование</p>
+      <h2 class="section-title">Забронируйте столик за минуту</h2>
+      <p class="section-sub">Оставьте заявку - перезвоним в течение 5 минут и подтвердим бронь.</p>
+
+      <form id="bookingForm" novalidate>
+        <div class="booking-grid">
+          <div class="field">
+            <label for="bName">Имя</label>
+            <input id="bName" name="name" type="text" placeholder="Как к вам обращаться" required>
+            <span class="field-err"></span>
+          </div>
+          <div class="field">
+            <label for="bPhone">Телефон</label>
+            <input id="bPhone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+            <span class="field-err"></span>
+          </div>
+          <div class="field">
+            <label for="bGuests">Гостей</label>
+            <select id="bGuests" name="guests" required>
+              <option value="">Выберите</option>
+              <option>1</option><option>2</option><option>3</option>
+              <option>4</option><option>5</option><option>6+</option>
+            </select>
+            <span class="field-err"></span>
+          </div>
+          <div class="field">
+            <label for="bDate">Дата</label>
+            <div class="picker" data-picker="date">
+              <button type="button" class="picker-trigger" aria-haspopup="dialog">
+                <span class="picker-text" data-placeholder="Выберите дату"></span>
+                <svg class="picker-arrow" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 4 L6 8 L10 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <input type="hidden" id="bDate" name="date" required>
+              <div class="picker-popup">
+                <div class="calendar-head">
+                  <button type="button" class="calendar-nav" data-nav="prev" aria-label="Предыдущий месяц"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M8 2 L4 6 L8 10" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                  <div class="calendar-title"></div>
+                  <button type="button" class="calendar-nav" data-nav="next" aria-label="Следующий месяц"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M4 2 L8 6 L4 10" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                </div>
+                <div class="calendar-weekdays"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div>
+                <div class="calendar-days"></div>
+              </div>
+              <span class="field-err"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bTime">Время</label>
+            <div class="picker" data-picker="time">
+              <button type="button" class="picker-trigger" aria-haspopup="dialog">
+                <span class="picker-text" data-placeholder="Выберите время"></span>
+                <svg class="picker-arrow" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 4 L6 8 L10 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <input type="hidden" id="bTime" name="time" required>
+              <div class="picker-popup">
+                <div class="time-list"></div>
+              </div>
+              <span class="field-err"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bNote">Комментарий</label>
+            <input id="bNote" name="note" type="text" placeholder="Например: у окна">
+            <span class="field-err"></span>
+          </div>
+        </div>
+
+        <label class="checkbox">
+          <input type="checkbox" id="bAgree" required>
+          <span>Согласен с <a href="#" style="text-decoration:underline">политикой конфиденциальности</a> и обработкой персональных данных</span>
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-block">Забронировать стол</button>
+        <div class="form-success" id="bookingSuccess">Спасибо! Заявка отправлена. Мы перезвоним в течение 5 минут для подтверждения.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacts" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="container">
+    <p class="eyebrow">Контакты</p>
+    <h2 class="section-title">Как нас найти</h2>
+    <div class="contacts-grid">
+      <div>
+        <h4>Адрес</h4>
+        <p class="muted">ул. Чубынина, 17, Салехард</p>
+        <h4>Телефон</h4>
+        <p><a href="tel:+76767676767" class="accent-link">+7 676 767 67-67</a></p>
+        <h4>Часы работы</h4>
+        <p class="muted">Пн–Вс: 9:00 – 23:00<br>Без выходных</p>
+        <h4>Email</h4>
+        <p><a href="https://t.me/mrflyer">wassup@grib.bl</a></p>
+        <button class="btn btn-primary" data-open-modal style="margin-top:20px">Забронировать стол</button>
+      </div>
+      <div class="contacts-map">
+  <div style="position:relative;overflow:hidden;width:100%;height:100%;">
+    <a href="https://yandex.ru/maps/org/teplo/213825798619/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;z-index:10;">Тепло</a>
+    <a href="https://yandex.ru/maps/58/salekhard/category/restaurant/184106394/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;z-index:10;">Ресторан в Салехарде</a>
+    <a href="https://yandex.ru/maps/58/salekhard/category/bar_pub/184106384/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;z-index:10;">Бар в Салехарде</a>
+    <iframe src="https://yandex.ru/map-widget/v1/?ll=66.615035%2C66.529361&mode=search&oid=213825798619&ol=biz&z=17.56" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative;border:none;"></iframe>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo"><img src="img/logo.png" alt="Тёплый угол" class="logo-mark">Тёплый угол</div>
+        <p>Кафе и кофейня в центре города. Домашняя кухня, свежие продукты, уютная атмосфера с 1967 года.</p>
+        <div class="socials">
+        <a href="https://t.me/mrflyer" aria-label="Telegram">
+            <img src="img/tg-icon-100.png" alt="Telegram">
+        </a>
+        <a href="https://t.me/mrflyer" aria-label="VK">
+            <img src="img/vk-icon-100.png" alt="VK">
+        </a>
+        </div>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <p><a href="#menu">Меню</a></p>
+        <p><a href="#promo">Акции</a></p>
+        <p><a href="#booking">Бронирование</a></p>
+        <p><a href="#contacts">Контакты</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 1967 Кафе «Тёплый угол».</span>
+      <span><a href="#">Политика конфиденциальности</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="tel:+76767676767" class="btn btn-ghost">Позвонить</a>
+  <button class="btn btn-primary" data-open-modal>Забронировать</button>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" aria-label="Закрыть">×</button>
+    <h3 id="modalTitle">Забронировать столик</h3>
+    <p>Оставьте контакты - перезвоним и подтвердим бронь за 5 минут.</p>
+
+    <form id="modalForm" novalidate>
+      <div class="field" style="margin-bottom:14px">
+        <label for="mName">Имя</label>
+        <input id="mName" name="name" type="text" placeholder="Ваше имя" required>
+        <span class="field-err"></span>
+      </div>
+      <div class="field" style="margin-bottom:14px">
+        <label for="mPhone">Телефон</label>
+        <input id="mPhone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+        <span class="field-err"></span>
+      </div>
+      <div class="modal-row">
+        <div class="field">
+          <label for="mDate">Дата</label>
+          <div class="picker" data-picker="date">
+            <button type="button" class="picker-trigger" aria-haspopup="dialog">
+              <span class="picker-text" data-placeholder="Дата"></span>
+              <svg class="picker-arrow" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 4 L6 8 L10 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <input type="hidden" id="mDate" name="date" required>
+            <div class="picker-popup">
+              <div class="calendar-head">
+                <button type="button" class="calendar-nav" data-nav="prev" aria-label="Предыдущий месяц"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M8 2 L4 6 L8 10" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <div class="calendar-title"></div>
+                <button type="button" class="calendar-nav" data-nav="next" aria-label="Следующий месяц"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M4 2 L8 6 L4 10" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+              <div class="calendar-weekdays"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div>
+              <div class="calendar-days"></div>
+            </div>
+            <span class="field-err"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="mTime">Время</label>
+          <div class="picker" data-picker="time">
+            <button type="button" class="picker-trigger" aria-haspopup="dialog">
+              <span class="picker-text" data-placeholder="Время"></span>
+              <svg class="picker-arrow" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 4 L6 8 L10 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <input type="hidden" id="mTime" name="time" required>
+            <div class="picker-popup"><div class="time-list"></div></div>
+            <span class="field-err"></span>
+          </div>
+        </div>
+      </div>
+      <label class="checkbox"><input type="checkbox" id="mAgree" required><span>Согласен с политикой конфиденциальности</span></label>
+      <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+      <div class="form-success" id="modalSuccess">Готово! Скоро свяжемся с вами.</div>
+    </form>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
